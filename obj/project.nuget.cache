@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Vdam8ip0qZJmyqtGxWfdIXgtXqPuLYTEApKp9y5LicdpaoEAEQQx22ZUKeal4I/6+WyzX7vfNg8mYJpODWrBKA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\leobo\\OneDrive\\Área de Trabalho\\antlr-compiler\\the-interpreter-101.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\leobo\\.nuget\\packages\\antlr4.runtime.standard\\4.9.2\\antlr4.runtime.standard.4.9.2.nupkg.sha512",
+    "C:\\Users\\leobo\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\leobo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\leobo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\leobo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.27\\microsoft.netcore.app.host.win-x64.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}
