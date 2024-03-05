@@ -69,12 +69,6 @@ write f"teste_int contém valor ${x4}";
 x4 *= 3;
 write f"teste_int contém valor ${x4}";
 ```
-condição ternaria
-```
-int teste_int = 11;
-teste_int > 10 ? " é maior que 10" : "Tmenor que 10";
-```
-
 IF e IF ELSE
 ```
 int teste_int = 11;
@@ -98,6 +92,11 @@ while (teste_int < 10) {
     write f"WHILE teste_int: ${teste_int}";
     teste_int += 2;
 };
+```
+condição ternaria
+```
+int teste_int = 11;
+teste_int > 10 ? " é maior que 10" : "Tmenor que 10";
 ```
 array
 ```
