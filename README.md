@@ -6,7 +6,7 @@ O compilador é um programa que transforma um código fonte em uma linguagem de 
 # Como compilar e executar o compilador
 Para compilar o compilador, siga os seguintes passos:
 
-1. Clone o repositório do Github `https://github.com/Gabriellimmaa/antlr-compiler.git`
+1. Clone o repositório do Github `https://github.com/Leonardo-Borges-AF/compiler.git`
 2. Abra um terminal e navegue até o diretório raiz do projeto.
 3. Digite o comando `ant jar` para gerar o arquivo JAR do compilador.
 Para executar o compilador, digite o comando `java -jar antlr4-4.9.2-complete.jar -Dlanguage=CSharp -visitor -package Grammar -o Grammar Lang.g4` no terminal. Onde nome_do_arquivo_de_entrada é o nome do arquivo que contém o código fonte da linguagem definida pela gramática do compilador.
