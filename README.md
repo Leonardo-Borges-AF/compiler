@@ -69,11 +69,10 @@ write f"teste_int contém valor ${x4}";
 x4 *= 3;
 write f"teste_int contém valor ${x4}";
 ```
-concatenação de variaveis e string
+condição ternaria
 ```
-int teste_int = 99;
-string teste_string = "Della vai perdoar os erros e nos dar nota:";
-write f"${teste_string} ${teste_int}  ";
+int teste_int = 11;
+teste_int > 10 ? " é maior que 10" : "Tmenor que 10";
 ```
 
 IF e IF ELSE
