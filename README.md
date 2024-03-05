@@ -121,4 +121,4 @@ outras linguagens de programação. As contribuições deste estudo podem ser ú
 comunidade de pesquisa em compiladores e para o desenvolvimento de ferramentas de software para
 linguagens de programação.
 ```
-:smiley: :smiley: :smiley: 
+:smiley: 🏆 :smiley: 
