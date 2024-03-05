@@ -19,8 +19,10 @@ namespace Interpreter.Lang
             this._functions = functions;
         }
 
+        // Dictionary to hold variables and their values
         public Dictionary<string, object?> Variables { get; protected set; } = new Dictionary<string, object?>();
 
+        // Struct to represent a valuable with its type and value
         struct Valuable
         {
             public int type;
@@ -32,7 +34,7 @@ namespace Interpreter.Lang
                 value = _value;
             }
 
-
+            // Getter and setter methods
             public int GetType()
             {
                 return type;
@@ -56,11 +58,13 @@ namespace Interpreter.Lang
 
         #region I/O Statements
 
+        // Method to handle input read statements
         public override object? VisitInputRead([NotNull] LangParser.InputReadContext context)
         {
-            var input = Console.ReadLine();
-            var type = context.TYPE.Type;
+            var input = Console.ReadLine(); // Read input from console
+            var type = context.TYPE.Type; // Get the type of input variable
 
+            // Parse input based on its type
             if (type == LangLexer.INT)
             {
                 var y = 0;
@@ -70,7 +74,8 @@ namespace Interpreter.Lang
                 }
                 else
                 {
-                    Console.WriteLine("Entrada inválida para tipo INT");
+                    // Handle invalid input
+                    Console.WriteLine("Invalid input for INT type");
                     Environment.Exit(0);
                     return null;
                 }
@@ -84,7 +89,8 @@ namespace Interpreter.Lang
                 }
                 else
                 {
-                    Console.WriteLine("Entrada inválida para tipo BOOLEAN");
+                    // Handle invalid input
+                    Console.WriteLine("Invalid input for BOOLEAN type");
                     Environment.Exit(0);
                     return null;
                 }
@@ -96,7 +102,8 @@ namespace Interpreter.Lang
                 {
                     if (!input.Contains("."))
                     {
-                        Console.WriteLine("Entrada inválida para tipo DOUBLE");
+                        // Handle invalid input
+                        Console.WriteLine("Invalid input for DOUBLE type");
                         Environment.Exit(0);
                     }
                     else
@@ -106,11 +113,11 @@ namespace Interpreter.Lang
                 }
                 else
                 {
-                    Console.WriteLine("Entrada inválida para tipo DOUBLE");
+                    // Handle invalid input
+                    Console.WriteLine("Invalid input for DOUBLE type");
                     Environment.Exit(0);
                     return null;
                 }
-
             }
             if (type == LangLexer.STRING)
             {
@@ -121,16 +128,17 @@ namespace Interpreter.Lang
                 }
                 else
                 {
-                    Console.WriteLine("Entrada inválida para tipo STRING");
+                    // Handle invalid input
+                    Console.WriteLine("Invalid input for STRING type");
                     Environment.Exit(0);
                     return null;
                 }
             }
 
-
             return null;
         }
 
+        // Method to handle output write statements with variables
         public override object? VisitOutputWriteVar([NotNull] LangParser.OutputWriteVarContext context)
         {
             var varName = context.VAR().GetText();
@@ -142,6 +150,7 @@ namespace Interpreter.Lang
                     var position = Int32.Parse(context.POSITION().GetText().Replace("[", "").Replace("]", ""));
                     try
                     {
+                        // Output value at specific index in array
                         if (varStruct.GetType() == LangLexer.ARRAY_INT)
                         {
                             var auxList = (List<int>)varStruct.GetValue();
@@ -163,13 +172,14 @@ namespace Interpreter.Lang
                     }
                     catch
                     {
+                        // Handle index out of range
                         Console.WriteLine("Array " + varName + " index was out of range");
                         return null;
                     }
                 }
                 else
                 {
-
+                    // Output entire array
                     if (varStruct.GetType() == LangLexer.ARRAY_INT)
                     {
                         Console.Write('[');
@@ -222,6 +232,7 @@ namespace Interpreter.Lang
                         return null;
                     }
                 }
+                // Output value of variable
                 Console.WriteLine(varStruct.GetValue());
             }
             else
@@ -229,6 +240,7 @@ namespace Interpreter.Lang
             return null;
         }
 
+        // Method to handle output write statements with strings
         public override object? VisitOutputWriteStr([NotNull] LangParser.OutputWriteStrContext context)
         {
             var varName = context.STR().GetText();
@@ -236,6 +248,7 @@ namespace Interpreter.Lang
             return null;
         }
 
+        // Method to handle output write statements with expressions
         public override object? VisitOutputWriteExpr([NotNull] LangParser.OutputWriteExprContext context)
         {
             object? v = Visit(context.expr());
@@ -244,7 +257,10 @@ namespace Interpreter.Lang
             return null;
         }
 
+        // Method to handle output write statements with formatted strings
         public override object? VisitOutputWriteFStr([NotNull] LangParser.OutputWriteFStrContext context)
+       
+
         {
 
             List<string> blocks = new List<string>();
